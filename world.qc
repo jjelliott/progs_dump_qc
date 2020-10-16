@@ -330,10 +330,10 @@ void() worldspawn =
 	InitBodyQue ();
 
 // custom map attributes
-	if (self.model == "maps/e1m8.bsp")
+	/* if (self.model == "maps/e1m8.bsp")
 		cvar_set ("sv_gravity", "100");
 	else
-		cvar_set ("sv_gravity", "800");
+		cvar_set ("sv_gravity", "800"); */
 
 	cutscene = 0;   // No cutscene is active during worldspawn. Drake -- dumptruck_ds
 
