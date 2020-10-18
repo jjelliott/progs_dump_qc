@@ -326,14 +326,20 @@ void()	army_die3	=[	$death3,	army_die4	]
 	{
 		self.ammo_shells = 5;
 	}
-if(!self.keep_ammo)DropBackpack();};
+};
 void()	army_die4	=[	$death4,	army_die5	] {};
 void()	army_die5	=[	$death5,	army_die6	] {};
 void()	army_die6	=[	$death6,	army_die7	] {};
 void()	army_die7	=[	$death7,	army_die8	] {};
 void()	army_die8	=[	$death8,	army_die9	] {};
 void()	army_die9	=[	$death9,	army_die10	] {};
-void()	army_die10	=[	$death10,	army_die10	] {};
+void()	army_die10	=[	$death10,	army_die10	] {
+	if(!self.keep_ammo)
+	{
+		self.think = DropBackpack;
+		self.nextthink = 1;
+	}
+};
 
 void()	army_cdie1	=[	$deathc1,	army_cdie2	] {};
 void()	army_cdie2	=[	$deathc2,	army_cdie3	] {ai_back(5);};
@@ -360,7 +366,7 @@ void()	army_cdie3	=[	$deathc3,	army_cdie4	]
 	{
 		self.ammo_shells = 5;
 	}
-if(!self.keep_ammo)DropBackpack();ai_back(4);}; //dumptruck_ds
+ai_back(4);}; //dumptruck_ds
 void()	army_cdie4	=[	$deathc4,	army_cdie5	] {ai_back(13);};
 void()	army_cdie5	=[	$deathc5,	army_cdie6	] {ai_back(3);};
 void()	army_cdie6	=[	$deathc6,	army_cdie7	] {ai_back(4);};
@@ -368,7 +374,13 @@ void()	army_cdie7	=[	$deathc7,	army_cdie8	] {};
 void()	army_cdie8	=[	$deathc8,	army_cdie9	] {};
 void()	army_cdie9	=[	$deathc9,	army_cdie10	] {};
 void()	army_cdie10	=[	$deathc10,	army_cdie11	] {};
-void()	army_cdie11	=[	$deathc11,	army_cdie11	] {};
+void()	army_cdie11	=[	$deathc11,	army_cdie11	] {
+	if(!self.keep_ammo)
+	{
+		self.think = DropBackpack;
+		self.nextthink = 1;
+	}
+};
 
 
 void() army_die =
