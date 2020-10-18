@@ -30,11 +30,12 @@ $frame deathb9
 $frame char_a1 char_a2 char_a3 char_a4 char_a5 char_a6 char_a7 char_a8
 $frame char_a9 char_a10 char_a11 char_a12 char_a13 char_a14 char_a15 char_a16
 
-$frame magica1 magica2 magica3 magica4 magica5 magica6 magica7 magica8
-$frame magica9 magica10 magica11 magica12 magica13 magica14
+$frame magica1 magica2 magica3 magica4 magica5 magica6 magica8
+$frame magica9 magica10 magica13 magica14
 
-$frame magicb1 magicb2 magicb3 magicb4 magicb5 magicb6 magicb7 magicb8
-$frame magicb9 magicb10 magicb11 magicb12 magicb13
+
+$frame magicb1 magicb2 magicb3 magicb4 magicb5 magicb6 magicb8
+$frame magicb9 magicb10 magicb13
 
 $frame char_b1 char_b2 char_b3 char_b4 char_b5 char_b6
 
@@ -48,9 +49,9 @@ $frame w_attack8 w_attack9 w_attack10 w_attack11 w_attack12 w_attack13 w_attack1
 $frame w_attack15 w_attack16 w_attack17 w_attack18 w_attack19 w_attack20
 $frame w_attack21 w_attack22
 
-$frame magicc1 magicc2 magicc3 magicc4 magicc5 magicc6 magicc7 magicc8
-$frame magicc9 magicc10 magicc11
 
+$frame magicc1 magicc2 magicc3 magicc4 magicc5 magicc7 magicc8
+$frame magicc9
 
 void() hknight_char_a1;
 void() hknight_run1;
@@ -274,13 +275,10 @@ void()	hknight_magica2 =[	$magica2,	hknight_magica3	] {ai_face();};
 void()	hknight_magica3 =[	$magica3,	hknight_magica4	] {ai_face();};
 void()	hknight_magica4 =[	$magica4,	hknight_magica5	] {ai_face();};
 void()	hknight_magica5 =[	$magica5,	hknight_magica6	] {ai_face();};
-void()	hknight_magica6 =[	$magica6,	hknight_magica7	] {ai_face();};
-void()	hknight_magica7 =[	$magica7,	hknight_magica8	] {hknight_shot(-2);};
+void()	hknight_magica6 =[	$magica6,	hknight_magica8	] {ai_face();};
 void()	hknight_magica8 =[	$magica8,	hknight_magica9	] {hknight_shot(-1);};
 void()	hknight_magica9 =[	$magica9,	hknight_magica10] {hknight_shot(0);};
-void()	hknight_magica10 =[	$magica10,	hknight_magica11] {hknight_shot(1);};
-void()	hknight_magica11 =[	$magica11,	hknight_magica12] {hknight_shot(2);};
-void()	hknight_magica12 =[	$magica12,	hknight_magica13] {hknight_shot(3);};
+void()	hknight_magica10 =[	$magica10,	hknight_magica13] {hknight_shot(1);};
 void()	hknight_magica13 =[	$magica13,	hknight_magica14] {ai_face();};
 void()	hknight_magica14 =[	$magica14,	hknight_run1	] {ai_face();};
 
@@ -291,13 +289,10 @@ void()	hknight_magicb2 =[	$magicb2,	hknight_magicb3	] {ai_face();};
 void()	hknight_magicb3 =[	$magicb3,	hknight_magicb4	] {ai_face();};
 void()	hknight_magicb4 =[	$magicb4,	hknight_magicb5	] {ai_face();};
 void()	hknight_magicb5 =[	$magicb5,	hknight_magicb6	] {ai_face();};
-void()	hknight_magicb6 =[	$magicb6,	hknight_magicb7	] {ai_face();};
-void()	hknight_magicb7 =[	$magicb7,	hknight_magicb8	] {hknight_shot(-2);};
+void()	hknight_magicb6 =[	$magicb6,	hknight_magicb8	] {ai_face();};
 void()	hknight_magicb8 =[	$magicb8,	hknight_magicb9	] {hknight_shot(-1);};
 void()	hknight_magicb9 =[	$magicb9,	hknight_magicb10] {hknight_shot(0);};
-void()	hknight_magicb10 =[	$magicb10,	hknight_magicb11] {hknight_shot(1);};
-void()	hknight_magicb11 =[	$magicb11,	hknight_magicb12] {hknight_shot(2);};
-void()	hknight_magicb12 =[	$magicb12,	hknight_magicb13] {hknight_shot(3);};
+void()	hknight_magicb10 =[	$magicb10,	hknight_magicb13] {hknight_shot(1);};
 void()	hknight_magicb13 =[	$magicb13,	hknight_run1] {ai_face();};
 
 //============================================================================
@@ -306,13 +301,10 @@ void()	hknight_magicc1 =[	$magicc1,	hknight_magicc2	] {ai_face();};
 void()	hknight_magicc2 =[	$magicc2,	hknight_magicc3	] {ai_face();};
 void()	hknight_magicc3 =[	$magicc3,	hknight_magicc4	] {ai_face();};
 void()	hknight_magicc4 =[	$magicc4,	hknight_magicc5	] {ai_face();};
-void()	hknight_magicc5 =[	$magicc5,	hknight_magicc6	] {ai_face();};
-void()	hknight_magicc6 =[	$magicc6,	hknight_magicc7	] {hknight_shot(-2);};
+void()	hknight_magicc5 =[	$magicc5,	hknight_magicc7	] {ai_face();};
 void()	hknight_magicc7 =[	$magicc7,	hknight_magicc8	] {hknight_shot(-1);};
 void()	hknight_magicc8 =[	$magicc8,	hknight_magicc9	] {hknight_shot(0);};
-void()	hknight_magicc9 =[	$magicc9,	hknight_magicc10] {hknight_shot(1);};
-void()	hknight_magicc10 =[	$magicc10,	hknight_magicc11] {hknight_shot(2);};
-void()	hknight_magicc11 =[	$magicc11,	hknight_run1] {hknight_shot(3);};
+void()	hknight_magicc9 =[	$magicc9,	hknight_run1] {hknight_shot(1);};
 
 //===========================================================================
 
