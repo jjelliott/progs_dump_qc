@@ -1015,8 +1015,18 @@ void() func_bossgate =
 	if (SUB_Inhibit ())  // new spawnflags for all entities -- iw
 		return;
 
-	if ( (serverflags & 15) == 15)
-		return;		// all episodes completed
+	if (self.spawnflags & 1)
+	{
+		if (!((serverflags & 15) == 15))
+		{
+			return;  // exit if not all complete
+		}
+	}
+	else
+	{
+		if ( (serverflags & 15) == 15 )
+			return;		// all episodes completed
+	}
 	self.angles = '0 0 0';
 	self.movetype = MOVETYPE_PUSH;	// so it doesn't get pushed by anything
 	self.solid = SOLID_BSP;
