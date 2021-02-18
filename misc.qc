@@ -1007,6 +1007,8 @@ void() func_episodegate =
 	setmodel (self, self.model);
 };
 
+float BOSSGATE_REVERSE = 1; // Make func_bossgate appear when player has all runes
+
 /*QUAKED func_bossgate (0 .5 .8) ?
 This bmodel appears unless players have all of the episode sigils.
 */
@@ -1015,7 +1017,7 @@ void() func_bossgate =
 	if (SUB_Inhibit ())  // new spawnflags for all entities -- iw
 		return;
 
-	if (self.spawnflags & 1)
+	if (self.spawnflags & BOSSGATE_REVERSE)
 	{
 		if (!((serverflags & 15) == 15))
 		{

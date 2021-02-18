@@ -1796,7 +1796,13 @@ spawnflags(Flags) =
 	]
 ]
 
-@SolidClass base(Appearflags) = func_bossgate : "Boss gate" []
+@SolidClass base(Appearflags) = func_bossgate : "Boss gate"
+[
+	spawnflags(Flags) =
+	[
+		1 : "Reverse functionality" : 0
+	]
+]
 
 //
 // triggers
