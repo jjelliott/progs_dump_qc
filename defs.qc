@@ -590,6 +590,8 @@ float	AS_MISSILE		= 4;
 .string killtarget2;	// second target to kill
 string lastnameused;	// the targetname that was last used to trigger somthing
 
+// passthru ent for infighting
+.entity passthru;
 
 //===========================================================================
 

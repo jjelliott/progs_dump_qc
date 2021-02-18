@@ -20,6 +20,7 @@ void(entity t1, entity t2) make_angry_at =
         self = t1; // FoundTarget() only acts on self
         FoundTarget();
         self = oself;
+        t1.passthru = activator;
     }
 };
 

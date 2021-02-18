@@ -173,8 +173,14 @@ void() monster_death_use =
 
 	if (!self.target)
 		return;
-
-	activator = self.enemy;
+	if (self.passthru)
+	{
+		activator = self.passthru;
+	}
+	else
+	{
+		activator = self.enemy;
+	}
 	SUB_UseTargets ();
 };
 
