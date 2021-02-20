@@ -30,15 +30,44 @@ void() misc_infight_use =
 
     t1 = find(world, targetname, self.target);
     t2 = find(world, targetname, self.target2);
-
     if (!t1)
     {
-        dprint("[trigger_infight] Cannot find target\n");
+        dprint("[trigger_infight] Cannot find target, checking targetname2\n");
+        t1 = find(world, targetname2, self.target);
+    }
+    if (!t1)
+    {
+        dprint("[trigger_infight] Cannot find target, checking targetname3\n");
+        t1 = find(world, targetname3, self.target);
+    }
+    if (!t1)
+    {
+        dprint("[trigger_infight] Cannot find target, checking targetname4\n");
+        t1 = find(world, targetname4, self.target);
+    }
+    if (!t1)
+    {
+        dprint("[trigger_infight] Cannot find target, exhausted all targetnames\n");
         return;
     }
     if (!t2)
     {
-        dprint("[trigger_infight] Cannot find target2\n");
+        dprint("[trigger_infight] Cannot find target2 checking targetname2\n");
+        t2 = find(world, targetname2, self.target2);
+    }
+    if (!t2)
+    {
+        dprint("[trigger_infight] Cannot find target2 checking targetname3\n");
+        t2 = find(world, targetname3, self.target2);
+    }
+    if (!t2)
+    {
+        dprint("[trigger_infight] Cannot find target2 checking targetname4\n");
+        t2 = find(world, targetname4, self.target2);
+    }
+    if (!t2)
+    {
+        dprint("[trigger_infight] Cannot find target2, exhausted all targetnames\n");
         return;
     }
 
