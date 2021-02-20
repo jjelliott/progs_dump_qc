@@ -8,6 +8,7 @@ spawnflag 1 = mutual hate, both targets get angry at each other instantly
 */
 
 float INFIGHT_MUTUAL = 1;
+float INFIGHT_PLAYER_ACTIVATION = 2;
 
 void(entity t1, entity t2) make_angry_at =
 {
@@ -20,7 +21,6 @@ void(entity t1, entity t2) make_angry_at =
         self = t1; // FoundTarget() only acts on self
         FoundTarget();
         self = oself;
-        t1.passthru = activator;
     }
 };
 
@@ -46,6 +46,13 @@ void() misc_infight_use =
 
     if (self.spawnflags & INFIGHT_MUTUAL)
         make_angry_at(t2, t1);
+
+
+    if (self.spawnflags & INFIGHT_PLAYER_ACTIVATION)
+    {
+      t1.passthru = activator;
+      t2.passthru = activator;
+    }
 };
 
 void() misc_infight =
