@@ -1,5 +1,5 @@
-/*
-trigger_infight
+t2/*
+misc_infight
 
 target = monster that gets mad
 target2 = who target1 will be angry at
@@ -11,7 +11,7 @@ float INFIGHT_MUTUAL = 1;
 
 void(entity t1, entity t2) make_angry_at =
 {
-    if (t2.health) { // checks if t2 is alive
+    if (t2.health > 0 && t1.health > 0) { // checks if both are alive
         if (t1.enemy.classname == "player")
             t1.oldenemy = t1.enemy;
         t1.enemy = t2;
@@ -24,7 +24,7 @@ void(entity t1, entity t2) make_angry_at =
     }
 };
 
-void() trigger_infight_use =
+void() misc_infight_use =
 {
     local entity    t1, t2;
 
@@ -48,10 +48,10 @@ void() trigger_infight_use =
         make_angry_at(t2, t1);
 };
 
-void() trigger_infight =
+void() misc_infight =
 {
     if (SUB_Inhibit ())  // new spawnflags for all entities -- iw
         return;
 
-    self.use = trigger_infight_use;
+    self.use = misc_infight_use;
 };
