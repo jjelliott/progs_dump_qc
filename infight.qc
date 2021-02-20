@@ -1,4 +1,4 @@
-t2/*
+/*
 misc_infight
 
 target = monster that gets mad
