@@ -1836,10 +1836,17 @@ spawnflags(Flags) =
 		2 : "Episode 2" : 0
 		4 : "Episode 3" : 0
 		8 : "Episode 4" : 0
+		16 : "Reverse functionality" : 0
 	]
 ]
 
-@SolidClass base(Appearflags) = func_bossgate : "Boss gate" []
+@SolidClass base(Appearflags) = func_bossgate : "Boss gate"
+[
+	spawnflags(Flags) =
+	[
+		16 : "Reverse functionality" : 0
+	]
+]
 
 //
 // triggers
