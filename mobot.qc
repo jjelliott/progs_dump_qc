@@ -44,6 +44,14 @@ local entity bot, spawn_spot;
 	spawn_tfog (bot.origin);
 	spawn_tdeath (bot.origin, bot);
 
+	bot.targetname = spawn_spot.message;
+	bot.target = spawn_spot.target;
+	bot.target2 = spawn_spot.target2;
+	bot.target3 = spawn_spot.target3;
+	bot.target4 = spawn_spot.target4;
+	bot.killtarget = spawn_spot.killtarget;
+	bot.killtarget2 = spawn_spot.killtarget2;
+
 	if (self.style == 1) // spawn a Doggo
 	{
 		// set size and shape
