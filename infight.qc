@@ -27,9 +27,13 @@ void(entity t1, entity t2) make_angry_at =
 void() misc_infight_use =
 {
     local entity    t1, t2;
+    for (t1 = world; (t1 = find(t1, targetname, self.target)); )
+    {
+      for (t2 = world; (t2 = find(t2, targetname, self.target2)); )
+      {
+  //  t1 = find(world, targetname, self.target);
+  //  t2 = find(world, targetname, self.target2);
 
-    t1 = find(world, targetname, self.target);
-    t2 = find(world, targetname, self.target2);
     if (!t1)
     {
         dprint("[trigger_infight] Cannot find target, checking targetname2\n");
@@ -71,17 +75,19 @@ void() misc_infight_use =
         return;
     }
 
-    make_angry_at(t1, t2);
+      make_angry_at(t1, t2);
 
-    if (self.spawnflags & INFIGHT_MUTUAL)
+      if (self.spawnflags & INFIGHT_MUTUAL)
         make_angry_at(t2, t1);
 
 
-    if (self.spawnflags & INFIGHT_PLAYER_ACTIVATION)
-    {
-      t1.passthru = activator;
-      t2.passthru = activator;
+      if (self.spawnflags & INFIGHT_PLAYER_ACTIVATION)
+      {
+        t1.passthru = activator;
+        t2.passthru = activator;
+      }
     }
+  }
 };
 
 void() misc_infight =
